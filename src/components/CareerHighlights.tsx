@@ -29,16 +29,12 @@ export const CareerHighlights = () => {
             <div className="text-gray-600">Years Experience</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
-            <div className="text-gray-600">Projects Delivered</div>
+            <div className="text-3xl font-bold text-blue-600 mb-2">$1M+</div>
+            <div className="text-gray-600">Optimizations</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
-            <div className="text-gray-600">Teams Led</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">95%</div>
-            <div className="text-gray-600">Client Satisfaction</div>
+            <div className="text-gray-600">Mentored</div>
           </div>
         </div>
       </div>

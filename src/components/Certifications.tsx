@@ -5,18 +5,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 export const Certifications = () => {
   const certifications = [
     {
-      title: 'Google Cloud Professional Data Engineer',
-      recipient: 'Earned by Jordan Patel',
-      description: 'Advanced certification in designing and building data processing systems on Google Cloud Platform.',
+      title: 'Google Cloud Professional',
+      description: 'Data Engineer/Cloud Architect',
       logo: 'GCP',
       color: 'bg-blue-500'
     },
     {
-      title: 'AWS Certified Solutions Architect',
-      recipient: 'Awarded to Morgan Lee',
-      description: 'Expert-level certification in designing distributed systems on Amazon Web Services.',
-      logo: 'AWS',
-      color: 'bg-orange-500'
+      title: 'FinOps Certified Practitioner',
+      description: 'Cloud Cost Optimization',
+      logo: 'Linux',
+      color: 'bg-blue-500'
     }
   ];
 
@@ -42,7 +40,6 @@ export const Certifications = () => {
                   </div>
                   <div>
                     <CardTitle className="text-lg">{cert.title}</CardTitle>
-                    <CardDescription className="text-sm">{cert.recipient}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
