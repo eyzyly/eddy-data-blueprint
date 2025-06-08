@@ -20,7 +20,7 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-gray-900">Eddy Personal Site</h1>
+            <h1 className="text-xl font-bold text-gray-900">Eddy Zulkifly</h1>
           </div>
 
           {/* Desktop Navigation */}

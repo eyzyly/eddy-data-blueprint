@@ -21,9 +21,8 @@ export const Footer = () => {
 
   const socialLinks = [
     { name: 'Email', href: 'mailto:eddy@example.com', icon: Mail },
-    { name: 'LinkedIn', href: '#' },
-    { name: 'GitHub', href: '#' },
-    { name: 'X (Twitter)', href: '#' }
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/eddyzulkifly/' },
+    { name: 'GitHub', href: 'https://github.com/eyzyly' }
   ];
 
   return (

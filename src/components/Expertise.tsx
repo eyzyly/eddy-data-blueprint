@@ -6,26 +6,24 @@ export const Expertise = () => {
     {
       title: 'Data Engineering',
       description: 'Building robust, scalable data pipelines and infrastructure that handle petabyte-scale data processing.',
-      highlights: ['ETL/ELT Pipelines', 'Real-time Processing', 'Cloud Architecture']
+      highlights: ['ETL/ELT Pipelines','Analytics Engineering','Cloud Architecture']
     },
     {
-      title: 'Scalable Systems',
-      description: 'Designing distributed systems that grow with business needs while maintaining performance and reliability.',
-      highlights: ['Microservices', 'API Design', 'Performance Optimization']
+      title: 'Data Ops',
+      description: 'Building automated data systems/process that reduce developer toil while maintaining data quality.',
+      highlights: ['Github Actions', 'CI/CD']
     },
     {
-      title: 'Team Leadership',
-      description: 'Leading cross-functional teams through complex projects while fostering growth and innovation.',
-      highlights: ['Technical Mentorship', 'Agile Methodology', 'Strategic Planning']
+      title: 'FinOps',
+      description: 'Cloud Cost Optimization',
+      highlights: ['FOCUS', 'Tagging', 'Workload Optimization']
     }
   ];
 
   const achievements = [
     '10+ years in analytics and data engineering',
-    'Led 15+ mission-critical data projects',
-    'Achieved 40% performance improvements across systems',
-    'Mentored 25+ junior engineers and data scientists',
-    'Committed to continuous learning and industry best practices'
+    'Achieved 1M+ cost savings via data initiatives',
+    'Mentored 15+ data folks on ADPList'
   ];
 
   return (
