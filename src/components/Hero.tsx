@@ -1,11 +1,32 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
+// Declare Calendly on window object
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
+
 export const Hero = () => {
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+
+  useEffect(() => {
+    if (isDialogOpen && window.Calendly) {
+      // Initialize Calendly widget when dialog opens
+      window.Calendly.initInlineWidget({
+        url: 'https://calendly.com/eddyarief/30min',
+        parentElement: document.querySelector('.calendly-inline-widget'),
+        prefill: {},
+        utm: {}
+      });
+    }
+  }, [isDialogOpen]);
+
   return (
     <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 py-20 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,7 +41,7 @@ export const Hero = () => {
             Building trusted data platforms with cloud cost visibility
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start">
-              <Dialog>
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
                     Hire Me
