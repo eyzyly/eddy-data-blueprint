@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 export const Hero = () => {
   return (
@@ -19,12 +20,20 @@ export const Hero = () => {
             Building trusted data platforms with cloud cost visibility
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start">
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
-              >
-                Hire Me
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+                                  Hire Me
+                                </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl"> {/* Larger for calendar */}
+                  <DialogHeader>
+                    <DialogTitle>Schedule a Meeting</DialogTitle>
+                  </DialogHeader>
+                    <div className="calendly-inline-widget" data-url="https://calendly.com/eddyarief/30min" style={{minWidth:'320px', height:'700px'}}></div>
+                </DialogContent>
+              </Dialog>
+
             </div>
           </div>
           <div className="flex flex-col items-center space-y-1">
