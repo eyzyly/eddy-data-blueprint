@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
@@ -14,7 +15,7 @@ export const Hero = () => {
               <span className="text-blue-600">data strategy</span> and{" "}
               <span className="text-blue-600">technical leadership</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 mb-8 max-w-3xl">
               Senior staff engineer with 10 years in analytics, transforming
               complex data challenges into scalable solutions that drive
               measurable business impact.
@@ -37,8 +38,8 @@ export const Hero = () => {
           </div>
           <div className="flex justify-center lg:justify-end">
             <Avatar className="w-64 h-64 lg:w-80 lg:h-80">
-              <AvatarImage src="/eddy-headshot.jpg" alt="Eddy Zulkifly" />
-              <AvatarFallback>YN</AvatarFallback>
+              <AvatarImage src="/eddy-headshot.jpeg" alt="Eddy Zulkifly" />
+              <AvatarFallback>EZ</AvatarFallback>
             </Avatar>
           </div>
         </div>
