@@ -11,36 +11,31 @@ export const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-left lg:text-left">
             <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Driving business growth through{" "}
-              <span className="text-blue-600">data strategy</span> and{" "}
-              <span className="text-blue-600">technical leadership</span>
+              Drive business value with scalable{" "}
+              <span className="text-blue-600">Data Architecture</span> and{" "}
+              <span className="text-blue-600">FinOps</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl">
-              Senior staff engineer with 10 years in analytics, transforming
-              complex data challenges into scalable solutions that drive
-              measurable business impact.
+            Building trusted data platforms with cloud cost visibility
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start">
               <Button
                 size="lg"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
               >
-                Reach out
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3"
-              >
-                See work
+                Hire Me
               </Button>
             </div>
           </div>
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex flex-col items-center space-y-1">
             <Avatar className="w-64 h-64 lg:w-80 lg:h-80">
               <AvatarImage src="/eddy-headshot.jpg" alt="Eddy Zulkifly" />
               <AvatarFallback>EZ</AvatarFallback>
             </Avatar>
+            <h2 className="text-4xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              Hi! I'm {" "}
+              <span className="text-blue-600">Eddy</span>
+            </h2>
           </div>
         </div>
       </div>
