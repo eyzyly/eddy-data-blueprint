@@ -22,18 +22,21 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-start">
               <Dialog>
                 <DialogTrigger asChild>
-                                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                                  Hire Me
-                                </Button>
+                  <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
+                    Hire Me
+                  </Button>
                 </DialogTrigger>
-                <DialogContent className="max-w-4xl"> {/* Larger for calendar */}
+                <DialogContent className="max-w-4xl">
                   <DialogHeader>
                     <DialogTitle>Schedule a Meeting</DialogTitle>
                   </DialogHeader>
-                    <div className="calendly-inline-widget" data-url="https://calendly.com/eddyarief/30min" style={{minWidth:'320px', height:'700px'}}></div>
+                  <div 
+                    className="calendly-inline-widget" 
+                    data-url="https://calendly.com/eddyarief/30min" 
+                    style={{minWidth: '320px', height: '700px'}}
+                  ></div>
                 </DialogContent>
               </Dialog>
-
             </div>
           </div>
           <div className="flex flex-col items-center space-y-1">
