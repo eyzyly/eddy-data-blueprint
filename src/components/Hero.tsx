@@ -14,16 +14,60 @@ declare global {
 
 export const Hero = () => {
   const [isDialogOpen, setIsDialogOpen] = React.useState(false);
+  const [calendlyLoaded, setCalendlyLoaded] = React.useState(false);
+  const [calendlyError, setCalendlyError] = React.useState(false);
+
+  // Function to wait for Calendly script to load
+  const waitForCalendly = () => {
+    return new Promise((resolve) => {
+      const checkCalendly = () => {
+        console.log('Checking for Calendly...', !!window.Calendly);
+        if (window.Calendly) {
+          resolve(true);
+        } else {
+          setTimeout(checkCalendly, 100);
+        }
+      };
+      checkCalendly();
+    });
+  };
 
   useEffect(() => {
-    if (isDialogOpen && window.Calendly) {
-      // Initialize Calendly widget when dialog opens
-      window.Calendly.initInlineWidget({
-        url: 'https://calendly.com/eddyarief/30min',
-        parentElement: document.querySelector('.calendly-inline-widget'),
-        prefill: {},
-        utm: {}
-      });
+    if (isDialogOpen) {
+      console.log('Dialog opened, initializing Calendly...');
+      
+      const initializeCalendly = async () => {
+        try {
+          // Wait for Calendly to be available
+          await waitForCalendly();
+          
+          // Wait a bit more for DOM to be ready
+          setTimeout(() => {
+            const widgetElement = document.querySelector('.calendly-inline-widget');
+            console.log('Widget element found:', !!widgetElement);
+            
+            if (widgetElement && window.Calendly) {
+              console.log('Initializing Calendly widget...');
+              window.Calendly.initInlineWidget({
+                url: 'https://calendly.com/eddyarief/30min',
+                parentElement: widgetElement,
+                prefill: {},
+                utm: {}
+              });
+              setCalendlyLoaded(true);
+            } else {
+              console.error('Calendly widget element not found or Calendly not loaded');
+              setCalendlyError(true);
+            }
+          }, 200);
+          
+        } catch (error) {
+          console.error('Error initializing Calendly:', error);
+          setCalendlyError(true);
+        }
+      };
+
+      initializeCalendly();
     }
   }, [isDialogOpen]);
 
@@ -51,11 +95,34 @@ export const Hero = () => {
                   <DialogHeader>
                     <DialogTitle>Schedule a Meeting</DialogTitle>
                   </DialogHeader>
-                  <div 
-                    className="calendly-inline-widget" 
-                    data-url="https://calendly.com/eddyarief/30min" 
-                    style={{minWidth: '320px', height: '700px'}}
-                  ></div>
+                  {calendlyError ? (
+                    <div className="text-center py-8">
+                      <p className="text-gray-600 mb-4">Having trouble loading the calendar? No problem!</p>
+                      <Button asChild>
+                        <a 
+                          href="https://calendly.com/eddyarief/30min" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="bg-blue-600 hover:bg-blue-700 text-white"
+                        >
+                          Open Calendly in New Tab
+                        </a>
+                      </Button>
+                    </div>
+                  ) : (
+                    <>
+                      <div 
+                        className="calendly-inline-widget" 
+                        data-url="https://calendly.com/eddyarief/30min" 
+                        style={{minWidth: '320px', height: '700px'}}
+                      ></div>
+                      {!calendlyLoaded && (
+                        <div className="text-center text-gray-500 text-sm mt-2">
+                          Loading calendar...
+                        </div>
+                      )}
+                    </>
+                  )}
                 </DialogContent>
               </Dialog>
             </div>
