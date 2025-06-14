@@ -38,7 +38,7 @@ export const Hero = () => {
           </div>
           <div className="flex justify-center lg:justify-end">
             <Avatar className="w-64 h-64 lg:w-80 lg:h-80">
-              <AvatarImage src="/eddy-headshot.jpeg" alt="Eddy Zulkifly" />
+              <AvatarImage src="/eddy-headshot.jpg" alt="Eddy Zulkifly" />
               <AvatarFallback>EZ</AvatarFallback>
             </Avatar>
           </div>
