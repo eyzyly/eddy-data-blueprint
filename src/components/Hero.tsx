@@ -206,9 +206,6 @@ export const Hero = () => {
             <h2 className="text-sm font-medium text-gray-500 mb-2">
               Trusted by industry leaders and learning communities
             </h2>
-            <p className="text-xs text-gray-400">
-              Where I've worked, taught, and mentored
-            </p>
           </div>
           
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
@@ -224,7 +221,7 @@ export const Hero = () => {
                 <img
                   src={company.logo}
                   alt={company.name}
-                  className="h-16 w-auto opacity-80 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-100"
+                  className="h-12 w-auto transition-all duration-100"
                   onError={(e) => {
                     // Fallback to placeholder if logo doesn't exist
                     const target = e.target as HTMLImageElement;
