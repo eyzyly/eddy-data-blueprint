@@ -19,25 +19,13 @@ export const TrustedBy = () => {
       name: 'Uplimit',
       label: 'Instructor, Data Infra and Cost Optimization',
       link: 'https://www.uplimit.com/',
-      logo: '/logos/uplimit.svg'
-    },
-    {
-      name: 'University of Toronto',
-      label: 'B.A.Sc. Industrial Engineering',
-      link: 'https://www.engineering.utoronto.ca/',
-      logo: '/logos/uoft.svg'
-    },
-    {
-      name: 'Georgia Tech',
-      label: 'M.S. in Analytics (In Progress or Completed)',
-      link: 'https://www.gatech.edu/',
-      logo: '/logos/gatech.svg'
+      logo: '/logos/uplimit.png'
     },
     {
       name: 'ADPList',
       label: 'Top 100 Mentor in Data Engineering',
       link: 'https://adplist.org/',
-      logo: '/logos/adplist.svg'
+      logo: '/logos/adplist.png'
     }
   ];
 
@@ -66,7 +54,7 @@ export const TrustedBy = () => {
               <img
                 src={company.logo}
                 alt={company.name}
-                className="h-10 w-auto opacity-80 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300"
+                className="h-16 w-auto opacity-80 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-100"
                 onError={(e) => {
                   // Fallback to placeholder if logo doesn't exist
                   const target = e.target as HTMLImageElement;
