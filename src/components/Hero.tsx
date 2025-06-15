@@ -80,13 +80,13 @@ export const Hero = () => {
     },
     {
       name: 'The Home Depot',
-      label: 'Data Engineer – Retail Analytics Ops',
+      label: 'Senior Data Engineer',
       link: 'https://www.homedepot.ca/',
       logo: '/logos/home-depot.svg'
     },
     {
       name: 'Uplimit',
-      label: 'Instructor, Data Infra and Cost Optimization',
+      label: 'Teaching Assistant - Databricks/SRE',
       link: 'https://www.uplimit.com/',
       logo: '/logos/uplimit.png'
     },
@@ -221,7 +221,7 @@ export const Hero = () => {
                 <img
                   src={company.logo}
                   alt={company.name}
-                  className="h-12 w-auto transition-all duration-100"
+                  className="h-16 w-auto transition-all duration-100"
                   onError={(e) => {
                     // Fallback to placeholder if logo doesn't exist
                     const target = e.target as HTMLImageElement;
