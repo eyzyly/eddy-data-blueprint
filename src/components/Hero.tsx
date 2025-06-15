@@ -85,10 +85,44 @@ export const Hero = () => {
             Building trusted data platforms with cloud cost visibility
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start">
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3"
+                asChild
+              >
+                <a 
+                  href="https://github.com/eyzyly" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                <Github/>
+                  GitHub
+                </a>
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3"
+                asChild
+              >
+                <a 
+                  href="https://www.linkedin.com/in/eddyzulkifly/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Linkedin/>
+                  LinkedIn
+                </a>
+              </Button>
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                    Hire Me
+                    Schedule a call
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl">
@@ -125,40 +159,6 @@ export const Hero = () => {
                   )}
                 </DialogContent>
               </Dialog>
-              
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3"
-                asChild
-              >
-                <a 
-                  href="https://github.com/yourusername" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <Github className="h-5 w-5" />
-                  GitHub
-                </a>
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3"
-                asChild
-              >
-                <a 
-                  href="https://linkedin.com/in/yourprofile" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  LinkedIn
-                </a>
-              </Button>
             </div>
           </div>
           <div className="flex flex-col items-center space-y-1">
