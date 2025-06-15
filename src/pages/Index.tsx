@@ -2,6 +2,7 @@
 import React from 'react';
 import { Navigation } from '@/components/Navigation';
 import { Hero } from '@/components/Hero';
+import { TrustedBy } from '@/components/TrustedBy';
 import { CareerHighlights } from '@/components/CareerHighlights';
 import { TalksAndCommunity } from '@/components/TalksAndCommunity';
 import { Expertise } from '@/components/Expertise';
@@ -14,6 +15,7 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
+      <TrustedBy />
       <CareerHighlights />
       <TalksAndCommunity />
       <Expertise />
