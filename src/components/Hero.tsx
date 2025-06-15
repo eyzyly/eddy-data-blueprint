@@ -168,7 +168,7 @@ export const Hero = () => {
             </Avatar>
             <h2 className="text-4xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
               Hi! I'm {" "}
-              <span className="text-blue-600">Eddy</span>
+              <span className="text-blue-600">Eddy Z</span>
             </h2>
           </div>
         </div>
