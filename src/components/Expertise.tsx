@@ -20,12 +20,6 @@ export const Expertise = () => {
     }
   ];
 
-  const achievements = [
-    '10+ years in analytics and data engineering',
-    'Achieved 1M+ cost savings via data initiatives',
-    'Mentored 15+ data folks on ADPList'
-  ];
-
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
