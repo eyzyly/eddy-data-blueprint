@@ -20,12 +20,6 @@ export const Expertise = () => {
     }
   ];
 
-  const achievements = [
-    '10+ years in analytics and data engineering',
-    'Achieved 1M+ cost savings via data initiatives',
-    'Mentored 15+ data folks on ADPList'
-  ];
-
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,20 +47,6 @@ export const Expertise = () => {
           ))}
         </div>
 
-        {/* Achievements */}
-        <div className="bg-gray-50 rounded-lg p-8">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-            Key Achievements
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {achievements.map((achievement, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                <span className="text-gray-700">{achievement}</span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

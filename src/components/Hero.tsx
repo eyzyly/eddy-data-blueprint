@@ -1,7 +1,7 @@
 
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Github, Linkedin } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
@@ -85,10 +85,44 @@ export const Hero = () => {
             Building trusted data platforms with cloud cost visibility
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-start">
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3"
+                asChild
+              >
+                <a 
+                  href="https://github.com/eyzyly" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                <Github/>
+                  GitHub
+                </a>
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3"
+                asChild
+              >
+                <a 
+                  href="https://www.linkedin.com/in/eddyzulkifly/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Linkedin/>
+                  LinkedIn
+                </a>
+              </Button>
               <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                 <DialogTrigger asChild>
                   <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
-                    Hire Me
+                    Schedule a call
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl">
@@ -134,7 +168,7 @@ export const Hero = () => {
             </Avatar>
             <h2 className="text-4xl sm:text-4xl font-bold text-gray-900 mb-6 leading-tight">
               Hi! I'm {" "}
-              <span className="text-blue-600">Eddy</span>
+              <span className="text-blue-600">Eddy Z</span>
             </h2>
           </div>
         </div>
