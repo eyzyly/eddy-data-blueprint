@@ -1,7 +1,7 @@
 
 import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Github, Linkedin } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
@@ -125,6 +125,40 @@ export const Hero = () => {
                   )}
                 </DialogContent>
               </Dialog>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3"
+                asChild
+              >
+                <a 
+                  href="https://github.com/yourusername" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Github className="h-5 w-5" />
+                  GitHub
+                </a>
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3"
+                asChild
+              >
+                <a 
+                  href="https://linkedin.com/in/yourprofile" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Linkedin className="h-5 w-5" />
+                  LinkedIn
+                </a>
+              </Button>
             </div>
           </div>
           <div className="flex flex-col items-center space-y-1">
