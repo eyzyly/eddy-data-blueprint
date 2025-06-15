@@ -8,10 +8,8 @@ export const Navigation = () => {
 
   const navItems = [
     { name: 'About', href: '#about' },
-    { name: 'Writing', href: '#writing' },
-    { name: 'Connect', href: '#connect' },
-    { name: 'Mentor', href: '#mentor' },
-    { name: 'Community', href: '#community' }
+    { name: 'Community', href: '#community' },
+    { name: 'Connect', href: '#connect' }
   ];
 
   return (
