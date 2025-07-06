@@ -11,11 +11,10 @@ export const CareerHighlights = () => {
             Career Highlights
           </h2>
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            10 years leading analytics and data innovation
+            From Analyst to Senior Staff Engineer: 10+ years building and scaling modern data teams
           </h3>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Proven track record of building scalable data platforms, leading cross-functional teams, 
-            and delivering strategic insights that drive business growth across multiple industries.
+          <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+            I design cost-efficient data systems with dbt (data build tool), version control (github), and automation (airflow, github actions, dagster)—and upskill teams to adopt them confidently. My work frees analysts and engineers to focus on high-value problems, with $1M+ in savings across supply chain, e-commerce, and SaaS.
           </p>
           <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
             Learn more
