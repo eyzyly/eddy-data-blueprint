@@ -11,12 +11,11 @@ export const CareerHighlights = () => {
             Career Highlights
           </h2>
           <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            From Analyst to Senior Staff Engineer: 10+ years of data expertise from Retail to Tech
+            From Analyst to Senior Staff Engineer: Practitioner to Builder 
           </h3>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            I design cost-efficient data platforms and empower data teams to scale them effectively.
-            My work frees data teams to focus on what truly matters: 
-            collaborating with stakeholders to deliver actionable insights and drive business value
+            I design cost-efficient data platforms and empower data teams to scale them effectively
+            through training and mentorship.
           </p>
         </div>
 
