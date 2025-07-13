@@ -6,7 +6,9 @@ export const TalksAndCommunity = () => {
   const talks = [
     {
       type: 'Talk',
-      organization: 'Secoda',
+      organization: 'MDS Fest 3.0',
+      organizationUrl: 'https://mdsfest.com/',
+      date: '2025-05-06',
       title: 'Data Meets Finops: Leveraging Analytics to Optimize Cloud Costs',
       description: 'Learn how to build effective FinOps teams, define appropriate metrics, and apply real-world strategies from Kinaxis—from VM rightsizing to cost optimization.',
       action: 'Watch',
@@ -15,6 +17,8 @@ export const TalksAndCommunity = () => {
     {
       type: 'Talk',
       organization: 'Data Talks Club',
+      organizationUrl: 'https://datatalks.club/',
+      date: '2025-02-24',
       title: 'From Supply Chain to Digital Warehousing and FinOps',
       description: 'Sharing my journey into data engineering, FinOps, and optimizing costs across physical and digital infrastructure.',
       action: 'Watch',
@@ -48,18 +52,29 @@ export const TalksAndCommunity = () => {
                       {talk.type}
                     </span>
                     {talk.organization && (
+                      talk.organizationUrl ? (
+                        <a
+                          href={talk.organizationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700 hover:underline"
+                        >
+                          {talk.organization}
+                        </a>
+                      ) : (
+                        <span className="px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
+                          {talk.organization}
+                        </span>
+                      )
+                    )}
+                    {talk.date && (
                       <span className="px-3 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-700">
-                        {talk.organization}
+                        {talk.date}
                       </span>
                     )}
                   </div>
-                  {/* <div className="text-right">
-                    <span className="text-xs font-medium text-gray-500">
-                      {talk.date}
-                    </span>
-                  </div> */}
                 </div>
-                <CardTitle className="text-xl">{talk.title}</CardTitle>
+                <CardTitle className="text-xl pb-2 min-h-[56px]">{talk.title}</CardTitle>
                 <CardDescription>{talk.description}</CardDescription>
               </CardHeader>
               <div className="flex-1" />
