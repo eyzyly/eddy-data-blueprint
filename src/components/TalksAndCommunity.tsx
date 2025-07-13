@@ -26,6 +26,16 @@ export const TalksAndCommunity = () => {
     }
   ];
 
+  // Shared style for ADPList iframe containers
+  const iframeContainerStyle: React.CSSProperties = {
+    height: 496,
+    boxShadow: 'rgba(142, 151, 158, 0.15) 0px 4px 19px 0px',
+    borderRadius: 16,
+    overflow: 'hidden',
+    width: '100%',
+    maxWidth: 650,
+  };
+
   return (
     <section id="community" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +50,7 @@ export const TalksAndCommunity = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {talks.map((talk, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow duration-200 h-full flex flex-col">
+            <Card key={talk.url} className="hover:shadow-lg transition-shadow duration-200 h-full flex flex-col">
               <CardHeader>
                 <div className="flex justify-between items-start mb-2">
                   <div className="flex gap-2">
@@ -97,14 +107,7 @@ export const TalksAndCommunity = () => {
         {/* ADPList iframes: Bookings and Mentor Reviews */}
         <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 mt-16">
           <section
-            style={{
-              height: 496,
-              boxShadow: 'rgba(142, 151, 158, 0.15) 0px 4px 19px 0px',
-              borderRadius: 16,
-              overflow: 'hidden',
-              width: '100%',
-              maxWidth: 650,
-            }}
+            style={iframeContainerStyle}
           >
             <iframe
               src="https://adplist.org/widgets/booking?src=eddy-zulkifly"
@@ -116,15 +119,7 @@ export const TalksAndCommunity = () => {
             ></iframe>
           </section>
           <section
-            style={{
-              padding: 16,
-              height: 496,
-              boxShadow: 'rgba(142, 151, 158, 0.15) 0px 4px 19px 0px',
-              borderRadius: 16,
-              overflow: 'hidden',
-              width: '100%',
-              maxWidth: 650,
-            }}
+            style={{ ...iframeContainerStyle, padding: 16 }}
           >
             <iframe
               src="https://adplist.org/widgets/reviews?src=eddy-zulkifly"
