@@ -22,10 +22,10 @@ export const Navigation = () => {
   ];
 
   const serviceItems = [
-    { name: 'Data Engineering', href: '#data-engineering', description: 'Build robust data pipelines and infrastructure' },
-    { name: 'Analytics Consulting', href: '#analytics', description: 'Strategic insights from your data' },
-    { name: 'Training & Workshops', href: '#training', description: 'Upskill your team with expert guidance' },
-    { name: 'Technical Advisory', href: '#advisory', description: 'Technical leadership and architecture guidance' }
+    { name: 'Data Engineering', href: '/data-engineering', description: 'Build robust data pipelines and infrastructure' },
+    { name: 'Analytics Consulting', href: '/analytics', description: 'Strategic insights from your data' },
+    { name: 'Training & Workshops', href: '/training', description: 'Upskill your team with expert guidance' },
+    { name: 'Technical Advisory', href: '/technical-advisory', description: 'Technical leadership and architecture guidance' }
   ];
 
   return (
