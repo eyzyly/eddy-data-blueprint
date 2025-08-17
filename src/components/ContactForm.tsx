@@ -40,9 +40,9 @@ export const ContactForm = () => {
     try {
       // TODO: Replace these with your EmailJS configuration
       // See EMAILJS_SETUP.md for setup instructions
-      const serviceId = 'your_service_id'; // Replace with your EmailJS Service ID
-      const templateId = 'your_template_id'; // Replace with your EmailJS Template ID
-      const publicKey = 'your_public_key'; // Replace with your EmailJS Public Key
+      const serviceId = 'service_8n7jage'; // Replace with your EmailJS Service ID
+      const templateId = 'template_l24sg5f'; // Replace with your EmailJS Template ID
+      const publicKey = '8QLnypKFCN7m0pfLR'; // Replace with your EmailJS Public Key
       
       await emailjs.send(
         serviceId,
@@ -52,7 +52,7 @@ export const ContactForm = () => {
           from_email: data.email,
           subject: data.subject,
           message: data.message,
-          to_email: 'your-email@example.com' // Replace with your email
+          to_email: 'eddyarief@hotmail.com' // Replace with your email
         },
         publicKey
       );
