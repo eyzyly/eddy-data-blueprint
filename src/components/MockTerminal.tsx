@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
-import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 
 interface CommandHistory {
   command: string;
@@ -61,7 +59,7 @@ const MOCK_COMMANDS: Record<string, (args: string[], currentDir: string) => stri
   
   echo: (args) => args.join(' '),
   
-  cat: (args, currentDir) => {
+  cat: (args) => {
     if (!args[0]) return 'cat: missing file operand';
     const fileName = args[0];
     const mockFiles: Record<string, string> = {
@@ -120,22 +118,22 @@ alias gs='git status'`,
   history: () => '__HISTORY__',
   
   neofetch: () => `
-       _,met\$\$\$\$\$gg.          eddy@workstation
-    ,g\$\$\$\$\$\$\$\$\$\$\$\$\$\$\$P.       -----------------
-  ,g\$\$P"     """Y\$\$."$.        OS: Debian GNU/Linux 11
- ,\$\$P'              \`\$\$\$.      Host: Virtual Machine
-',\$\$P       ,ggs.     \`\$\$b:    Kernel: 5.15.0-generic
-\`d\$\$'     ,\$P"'   .    \$\$\$    Uptime: 4 hours, 23 mins
- \$\$P      d\$'     ,    \$\$P    Packages: 1847 (dpkg)
- \$\$:      \$\$.   -    ,d\$\$'    Shell: bash 5.1.4
- \$\$;      Y\$b._   _,d\$P'      Terminal: MockTerminal v1.0
- Y\$\$.    \`.\`"Y\$\$\$\$P"'         CPU: Intel i7-9700K @ 3.6GHz
- \`\$\$b      "-.__              Memory: 4.2 GiB / 16 GiB
-  \`Y\$\$                        Disk: 127G / 512G (25%)
-   \`Y\$\$.
-     \`\$\$b.
-       \`Y\$\$b.
-          \`"Y\$b._
+       _,met$$$$$gg.          eddy@workstation
+    ,g$$$$$$$$$$$$$$$P.       -----------------
+  ,g$$P"     """Y$$."$.        OS: Debian GNU/Linux 11
+ ,$$P'              \`$$$.      Host: Virtual Machine
+',$$P       ,ggs.     \`$$b:    Kernel: 5.15.0-generic
+\`d$$'     ,$P"'   .    $$$    Uptime: 4 hours, 23 mins
+ $$P      d$'     ,    $$P    Packages: 1847 (dpkg)
+ $$:      $$.   -    ,d$$'    Shell: bash 5.1.4
+ $$;      Y$b._   _,d$P'      Terminal: MockTerminal v1.0
+ Y$$.    \`.\`"Y$$$$P"'         CPU: Intel i7-9700K @ 3.6GHz
+ \`$$b      "-.__              Memory: 4.2 GiB / 16 GiB
+  \`Y$$                        Disk: 127G / 512G (25%)
+   \`Y$$.
+     \`$$b.
+       \`Y$$b.
+          \`"Y$b._
               \`"""
 `,
   
@@ -337,7 +335,6 @@ export function MockTerminal() {
       }
     } else if (e.key === 'Tab') {
       e.preventDefault();
-      // Simple tab completion for commands
       const commands = Object.keys(MOCK_COMMANDS);
       const match = commands.find(c => c.startsWith(input.toLowerCase()));
       if (match) setInput(match);
@@ -346,7 +343,6 @@ export function MockTerminal() {
 
   useEffect(() => {
     const handleGlobalKeyDown = (e: KeyboardEvent) => {
-      // Only trigger on "/" if not already typing in an input
       if (e.key === '/' && !isOpen) {
         const activeElement = document.activeElement;
         const isInputActive = activeElement instanceof HTMLInputElement || 
@@ -359,7 +355,6 @@ export function MockTerminal() {
         }
       }
       
-      // Close on Escape
       if (e.key === 'Escape' && isOpen) {
         setIsOpen(false);
       }
@@ -381,16 +376,23 @@ export function MockTerminal() {
     }
   }, [history]);
 
+  if (!isOpen) return null;
+
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent 
-        className="max-w-4xl w-[90vw] h-[70vh] p-0 bg-zinc-900 border-zinc-700 overflow-hidden"
-        onPointerDownOutside={(e) => e.preventDefault()}
+    <>
+      {/* Backdrop */}
+      <div 
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50"
+        onClick={() => setIsOpen(false)}
+      />
+      
+      {/* Terminal Window */}
+      <div 
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-4xl h-[70vh] z-50 rounded-lg overflow-hidden shadow-2xl border border-zinc-700"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mock Terminal"
       >
-        <VisuallyHidden>
-          <DialogTitle>Mock Terminal</DialogTitle>
-        </VisuallyHidden>
-        
         {/* Terminal Header */}
         <div className="flex items-center gap-2 px-4 py-3 bg-zinc-800 border-b border-zinc-700">
           <div className="flex gap-2">
@@ -413,7 +415,7 @@ export function MockTerminal() {
         {/* Terminal Body */}
         <div 
           ref={scrollRef}
-          className="flex-1 overflow-y-auto p-4 font-mono text-sm h-[calc(70vh-56px)]"
+          className="bg-zinc-900 overflow-y-auto p-4 font-mono text-sm h-[calc(70vh-48px)]"
           onClick={() => inputRef.current?.focus()}
         >
           {/* Welcome message */}
@@ -432,7 +434,7 @@ export function MockTerminal() {
           {/* Command History */}
           {history.map((item, index) => (
             <div key={index} className="mb-2">
-              <div className="flex items-center">
+              <div className="flex items-center flex-wrap">
                 <span className="text-emerald-400">eddy@workstation</span>
                 <span className="text-zinc-500">:</span>
                 <span className="text-blue-400">{currentDir}</span>
@@ -446,7 +448,7 @@ export function MockTerminal() {
           ))}
 
           {/* Current Input Line */}
-          <div className="flex items-center">
+          <div className="flex items-center flex-wrap">
             <span className="text-emerald-400">eddy@workstation</span>
             <span className="text-zinc-500">:</span>
             <span className="text-blue-400">{currentDir}</span>
@@ -457,14 +459,14 @@ export function MockTerminal() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="flex-1 ml-2 bg-transparent text-zinc-200 outline-none caret-emerald-400"
+              className="flex-1 ml-2 bg-transparent text-zinc-200 outline-none caret-emerald-400 min-w-[100px]"
               autoFocus
               spellCheck={false}
               autoComplete="off"
             />
           </div>
         </div>
-      </DialogContent>
-    </Dialog>
+      </div>
+    </>
   );
 }
