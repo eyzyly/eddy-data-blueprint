@@ -9,6 +9,7 @@ import DataEngineering from "./pages/DataEngineering";
 import Analytics from "./pages/Analytics";
 import Training from "./pages/Training";
 import TechnicalAdvisory from "./pages/TechnicalAdvisory";
+import { MockTerminal } from "./components/MockTerminal";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <MockTerminal />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
